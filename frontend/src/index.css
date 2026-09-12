@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ash-50 text-navy-800 font-body antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    @apply font-display text-navy-700;
+  }
+  :focus-visible {
+    outline: 2px solid #FF5B1F;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* The recurring "road line" motif — a dashed route used as a structural
+     divider, tying every section back to the logo's road icon. */
+  .route-line {
+    height: 2px;
+    background-image: repeating-linear-gradient(
+      90deg,
+      currentColor 0 14px,
+      transparent 14px 24px
+    );
+    color: theme('colors.rescue.400');
+    opacity: 0.55;
+  }
+
+  .container-page {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-8;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: theme('colors.ash.300'); border-radius: 999px; }
+}
